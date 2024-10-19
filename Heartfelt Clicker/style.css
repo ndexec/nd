@@ -1,0 +1,212 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    animation: bounce-in 1s ease;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.avatar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Unica One', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    background-color: #7d7d7d;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+.logo:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    fill: #FF6347;
+    animation: float-heart 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes float-heart {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-40px) scale(1);
+    }
+    50% {
+        transform: translateY(-120px) scale(1.2);
+    }
+    100% {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+
+/* Анимация для выплескивания строк кода */
+.code-splash-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.code-splash {
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+    white-space: nowrap;
+    animation: code-fall 4s linear forwards;
+    opacity: 0;
+}
+
+@keyframes code-fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+#thankYouHeartfelt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #4a4a4a;
+    background: linear-gradient(135deg, #ffffff 0%, #f2f2f2 100%);
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(-100%); /* Появляется сверху */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%); /* Центрирует сообщение и скрывает его */
+    z-index: 1000; /* Обеспечивает, что сообщение будет поверх */
+    max-width: 100%;
+    width: 100%;
+}
+
+#thankYouHeartfelt.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Плавное появление сверху */
+}
+
+#thankYouHeartfelt p {
+    margin: 0;
+    font-weight: 600;
+    color: #FF6F61;
+    text-shadow: none;
+}
+
+.footer {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px; /* Уменьшенный отступ */
+    background-color: #f0f0f0; /* Нейтральный фон */
+    border-top: 1px solid #e0e0e0; /* Лёгкая граница сверху */
+    box-shadow: none; /* Убрали тень */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.2rem; /* Уменьшенный размер шрифта */
+    color: #555; /* Темно-серый цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+    font-weight: normal; /* Обычный текст */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Уменьшенный отступ между иконками */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1rem; /* Уменьшенный размер шрифта */
+    color: #555; /* Темно-серый цвет текста */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.social-icons a:hover {
+    color: #FF6F61; /* Цвет при наведении */
+}
+
+.social-icons img {
+    width: 25px; /* Уменьшенная ширина иконок */
+    height: 25px; /* Уменьшенная высота иконок */
+    margin-right: 8px; /* Уменьшенный отступ справа */
+}
